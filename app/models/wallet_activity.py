@@ -9,8 +9,8 @@ class WalletActivity(Base):
     id = Column(Integer, primary_key=True, autoincrement=True)
     wallet_address = Column(String, unique=True, nullable=False)
     total_transactions = Column(Integer, nullable=False, default=0)
-    total_ether_sent = Column(Float, nullable=False, default=0.0)
-    total_ether_received = Column(Float, nullable=False, default=0.0)
+    total_ether_sent = Column(Integer, nullable=False, default=0.0)
+    total_ether_received = Column(Integer, nullable=False, default=0.0)
 
     # Relationships
     wallet = relationship("wallet", back_populates="wallet_activity")

@@ -8,9 +8,9 @@ class TopWallets(Base):
 
     id = Column(Integer, primary_key=True, autoincrement=True)
     wallet_address = Column(String, unique=True, nullable=False)
-    transaction_volume = Column(Float, nullable=False, default=0.0)
+    transaction_volume = Column(Integer, nullable=False, default=0.0)
     total_transactions = Column(Integer, nullable=False, default=0)
-    total_value = Column(Float, nullable=False)
+    total_value = Column(Integer, nullable=False)
 
     # Relationships
     wallet = relationship("wallet", back_populates="top_wallet")

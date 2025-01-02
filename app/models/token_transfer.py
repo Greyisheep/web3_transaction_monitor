@@ -12,7 +12,7 @@ class TokenTransfer(Base):
     to_address = Column(String, ForeignKey('wallet.address'), nullable=False)
     tx_hash = Column(String, ForeignKey('transactions.tx_hash'), nullable=False)
     token_id = Column(String, nullable=True)  # For ERC-721 (NFTs)
-    value = Column(Float, nullable=True)  # For ERC-20
+    value = Column(Integer, nullable=True)  # For ERC-20
     timestamp = Column(DateTime, default=func.now())
 
     # Relationships

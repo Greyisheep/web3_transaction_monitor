@@ -8,7 +8,7 @@ class wallet(Base):
     __tablename__ = 'wallet'
     id = Column(Integer, primary_key=True, index=True)
     address=Column(String,unique=True,nullable=True)
-    balance=Column(float,nullable=False,default=0.0)
+    balance=Column(Integer,nullable=False,default=0.0)
 
     transaction_sent=relationship("transaction",foreign_keys='transation.from_address',back_populates="sender_wallet")
     transactions_received = relationship("transaction", foreign_keys='transaction.to_address', back_populates="receiver_wallet")

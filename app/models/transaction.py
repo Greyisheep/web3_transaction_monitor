@@ -13,7 +13,7 @@ class Transaction(Base):
     to_address = Column(String,ForeignKey('wallet.address'), index=True)
     value = Column(Numeric(precision=36, scale=18))  # For ETH values
     block_number = Column(Integer)
-    gas_fees = Column(Float, nullable=False)
+    gas_fees = Column(Integer, nullable=False)
     timestamp = Column(DateTime(timezone=True), server_default=func.now())
     status = Column(String)  # 'success' or 'failed'
     # Relationships
